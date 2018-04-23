@@ -1,5 +1,5 @@
 from application import app, db
-from application.models import User, Post, Member
+from application.models import User, Post, Member, Colleges
 from flask import render_template, url_for, redirect, flash, request
 from application.forms import LoginForm, RegistrationForm
 from flask_login import logout_user, login_user, current_user
@@ -57,3 +57,7 @@ lr3 = joblib.load('application/lr3.pkl')
 
 @app.route('/colleges')
 def prediction():
+
+    colleges = Colleges.query.all()
+
+    return render_template('colleges.html', colleges=colleges)

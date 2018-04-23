@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!--'BC', 'Boston U', 'Brown', 'Cornell U', 'Duke', 'Georgetown U', 'Georgia Tech', 'Harvard',
+ 'Johns Hopkins', 'MIT', 'NYU', 'Northeastern', 'Northwestern', 'Princeton', 'Stanford',
+ 'U Chicago', 'U Maryland', 'U Michigan', 'U SoCal', 'U-Penn', 'UC Berkeley', 'UC Davis',
+ 'UCLA', 'UCSB', 'UCSD', 'UNC Chapel Hill', 'UVA', 'Vanderbilt', 'Wash U', 'Yale']-->
+
+
+
+    <div class="colleges">
+        <h1>College Admittance Predictor</h1>
+
+        <form action="/predict.html" method="get" id="collegelist">
+            <select name="collegelist" size="1" id="ddl" form="collegelist">
+                <option value="" disabled selected>Select a college...</option>
+                {% for college in colleges %}
+                    <option value="{{ college.college_id }}">{{ college.name }}</option>
+                {% endfor %}
+            </select>
+
+            <br><br>
+
+            GPA (unweighted)<br>
+            <input type="number" name="GPA_UW" id="GPA_UW" oninput="limit()" min="0.00" max="4.00" maxlength="3" style="width: 33%" placeholder="4.00"><br>
+            GPA (weighted)<br>
+            <input type="number" name="GPA_W" id="GPA_W" oninput="limit()" min="0.00" max="5.00" maxlength="3" style="width: 33%" placeholder="5.00"><br>
+            Class rank (#[rank] of #[total])<br>
+            <input type="text" name="Class_Rank" style="width: 33%" placeholder="1 of 500"><br>
+            <input type="radio" name="HS_Type" value="Public">Public<br>
+            <input type="radio" name="HS_Type" value="Private">Private<br>
+            <input type="radio" name="HS_Type" value="Parochial">Parochial<br>
+            <input type="radio" name="HS_Type" value="Home">Home<br>
+            <input type="submit" value="Predict your destiny...">
+
+        </form>
+
+    </div>
+
+{% endblock %}
+
+{% block js %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'predict.js') }}"></script>
+
+{% endblock %}
+
+<!--<option value="Select a college"></option>
+    <option value="Boston College"></option>
+    <option value="Boston University"></option>
+    <option value="Brown University"></option>
+    <option value="Cornell Univeristy"></option>
+    <option value="Duke University"></option>
+    <option value="Georgetown University"></option>
+    <option value="Georgia Institute of Technology"></option>
+    <option value="Harvard University"></option>
+    <option value="Johns Hopkins University"></option>
+    <option value="Massachusetts Institute of Technology"></option>
+    <option value="New York University"></option>
+    <option value="Northeastern University"></option>
+    <option value="Northwestern University"></option>
+    <option value="Princeton University"></option>
+    <option value="Stanford University"></option>
+    <option value="University of Chicago"></option>
+    <option value="University of Maryland"></option>
+    <option value="University of Michigan"></option>
+    <option value="University of Southern California"></option>
+    <option value="University of Pennsylvania"></option>
+    <option value="University of California, Berkeley"></option>
+    <option value="University of California, Davis"></option>
+    <option value="University of California, Los Angeles"></option>
+    <option value="University of California, Santa Barbera"></option>
+    <option value="University of California, San Diego"></option>
+    <option value="University of North Carolina, Chapel Hill"></option>
+    <option value="University of Virginia"></option>
+    <option value="Vanderbilt University"></option>
+    <option value="Washington University"></option>
+    <option value="Yale University"></option> -->

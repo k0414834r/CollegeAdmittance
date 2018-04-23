@@ -22,7 +22,7 @@ def load_user(id):
     return User.query.get(int(id))
 
 class Post(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    post_id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(20))
     subtitle = db.Column(db.String(40))
     body = db.Column(db.String(280))
@@ -32,7 +32,7 @@ class Post(db.Model):
         return '<Post {}>'.format(self.body)
 
 class Member(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    member_id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(20))
     subtitle = db.Column(db.String(40))
     body = db.Column(db.String(280))
@@ -40,3 +40,8 @@ class Member(db.Model):
 
     def __repr__(self):
         return '<Post {}'.format(self.body)
+
+class Colleges(db.Model):
+    college_id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80))
+

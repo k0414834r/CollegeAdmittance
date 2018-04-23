@@ -15,6 +15,14 @@
     display: table-cell;
 }
 
+#ddl {
+    min-height: 12px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: absolute;
+    width: 300px;
+ }
+
 .heading {
     margin: 0 auto;
     width: 50%;
@@ -67,6 +75,17 @@ h3 {
 
 a {
 
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=submit] {
+    background-color: white;
+    border-radius: 5px;
 }
 
 a:hover {
