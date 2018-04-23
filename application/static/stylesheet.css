@@ -1,37 +1,37 @@
-#one {
-    float: left;
-    width: 33%;
-    display: table-cell;
-}
-
-#two {
-    width: 33%;
-    display: table-cell;
-}
-
-#three {
-    float: right;
-    width: 33%;
-    display: table-cell;
-}
-
 #ddl {
     min-height: 12px;
     overflow-y: auto;
     overflow-x: hidden;
-    position: absolute;
-    width: 300px;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    text-align: center;
  }
 
 .heading {
+    text-align: justify;
     margin: 0 auto;
     width: 50%;
     font-size: 36px;
-    font-family: Georgia;
+    font-family: "Calisto MT";
     border-color: black;
     border: 0 0 5px 0;
-    display: table;
-    text-align: center;
+    list-style: none;
+    padding: 0px;
+}
+
+.heading:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+ul.heading {
+    padding: 0px;
+}
+
+.heading li {
+    display: inline-block;
 }
 
 .container {
@@ -52,17 +52,33 @@
     padding: 3% 10% 3% 10%;
     width: 38%;
     border: 5px;
-    border-color: black;
+    border-color: white;
     border-radius: 3px;
     border-style: outset;
 }
 
-p {
+.colleges {
+    color: white;
+    font-family: "Calisto MT";
+}
 
+body {
+    background-image: url("library.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p {
+    color: white;
+    font-family: "Calisto MT";
 }
 
 h1 {
-
+    color: white;
+    font-family: "Calisto MT";
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 0 0 10px #FFFFFF;
 }
 
 h2 {
@@ -73,8 +89,14 @@ h3 {
 
 }
 
-a {
+a:link {
+    color: white;
+    font-family: "Calisto MT";
+    text-shadow: 0 0 10px #FFFFFF;
+}
 
+option {
+    max-width: 5%;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -86,24 +108,28 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=submit] {
     background-color: white;
     border-radius: 5px;
+    display: block;
+    margin: 0 auto;
 }
 
 a:hover {
-
+    text-shadow: 0 0 10px #0000FF;
 }
 
 a:visited {
-
+    text-shadow: 0 0 10px #800080;
 }
 
 a:visited:hover {
-
+    text-shadow: 0 0 10px #FFFFFF;
 }
 
 .form {
-
+    color: white;
+    font-family: "Calisto MT";
 }
 
 .flash {
-
+    color: white;
+    font-family: "Calisto MT";
 }

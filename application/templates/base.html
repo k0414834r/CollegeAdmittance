@@ -16,18 +16,18 @@
 
     </head>
     <body>
-        <div class="heading">
-            <div id="one"><a href="/index">Home</a></div>
-            <div id="two"><a href="/colleges">Colleges</a></div>
+        <ul class="heading">
+            <li><a href="/index">Home</a></li>
+            <li><a href="/colleges">Colleges</a></li>
 
-            <div id="three">
+            <li>
                 {% if current_user.is_anonymous %}
                 <a href="{{ url_for('login') }}">Login</a>
                 {% else %}
                 <a href="{{ url_for('logout') }}">Logout</a>
                 {% endif %}
-            </div>
-        </div>
+            </li>
+        </ul>
 
         <div class="container">
 
