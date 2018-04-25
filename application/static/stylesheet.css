@@ -34,6 +34,28 @@ ul.heading {
     display: inline-block;
 }
 
+.radio {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    list-style: none;
+}
+
+.radio:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+.radio ul {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+.radio li {
+    display: inline-block;
+}
+
 .container {
     margin: 0 auto;
     width: 50%;
@@ -99,10 +121,10 @@ option {
     max-width: 5%;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+input[type=number] #HS_State #GPA_UW #GPA_UW #SAT_M #SAT_CR #SAT_W #ACT #Class_Rank {
+    display: block;
+    float: right;
+    width: 25%;
 }
 
 input[type=submit] {
@@ -112,11 +134,21 @@ input[type=submit] {
     margin: 0 auto;
 }
 
+input[type=number, text] {
+    display: block;
+    margin: 0 auto;
+}
+
+.field {
+    text-align: center;
+}
+
 a:hover {
-    text-shadow: 0 0 10px #0000FF;
+    text-shadow: 0 0 10px #0000c7;
 }
 
 a:visited {
+    color: #330077;
     text-shadow: 0 0 10px #800080;
 }
 

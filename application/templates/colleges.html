@@ -14,7 +14,7 @@
 
         <div class="login">
 
-            <form action="/predict.html" method="get" id="collegelist">
+            <form action="/predict" method="POST" id="collegelist">
                 <select name="collegelist" size="1" id="ddl" form="collegelist">
                     <option value="" disabled selected>Select a college...</option>
                     {% for college in colleges %}
@@ -23,18 +23,32 @@
                 </select>
 
                 <br>
-
-                GPA (unweighted)<br>
-                <input type="number" name="GPA_UW" id="GPA_UW" oninput="limit()" min="0.00" max="4.00" maxlength="3" style="width: 33%" placeholder="4.00"><br><br>
-                GPA (weighted)<br>
-                <input type="number" name="GPA_W" id="GPA_W" oninput="limit()" min="0.00" max="5.00" maxlength="3" style="width: 33%" placeholder="5.00"><br><br>
-                Class rank<br>
-                (#[rank] of #[total])<br>
-                <input type="text" name="Class_Rank" style="width: 33%" placeholder="1 of 500"><br><br>
-                <input type="radio" name="HS_Type" value="Public">Public<br>
-                <input type="radio" name="HS_Type" value="Private">Private<br>
-                <input type="radio" name="HS_Type" value="Parochial">Parochial<br>
-                <input type="radio" name="HS_Type" value="Home">Home<br><br>
+                <div class="field">
+                    State Abbreviation <input type="text" name="HS_State" id="HS_State" maxlength="2" placeholder="IL"><br><br>
+                    GPA (unweighted) <input type="number" name="GPA_UW" value="float" id="GPA_UW" min="0.00" max="4.00" maxlength="3" placeholder="4.00"><br>
+                    GPA (weighted) <input type="number" name="GPA_W" value="float" id="GPA_W" min="0.00" max="5.00" maxlength="3" placeholder="5.00"><br>
+                    SAT (mathematics) <input type="number" name="SAT_M" value="float" id="SAT_M" min="0.00" max="800" maxlength="3" placeholder="800"><br>
+                    SAT (reading) <input type="number" name="SAT_CR" value="float" id="SAT_CR" min="0.00" max="800" maxlength="3" placeholder="800"><br>
+                    SAT (writing) <input type="number" name="SAT_W" value="float" id="SAT_W" min="0.00" max="800" maxlength="3" placeholder="800"><br>
+                    ACT (0 if N/A) <input type="number" name="ACT" value="float" id="ACT" min="0.00" max="800" maxlength="3" placeholder="32"><br>
+                    Class Ranking <input type="number" name="Class_Rank" value="float" id="Class_Rank" min="0.00" max="1.00" maxlength="3" placeholder="0.99"><br>
+                </div>
+                <hr>
+                <div class="radio">
+                    <ul>
+                        <li><input type="radio" name="EA/ED" value="True"></li><li>EA/ED Status (T/F)</li><li><input type="radio" name="EA/ED" value="False"></li><br>
+                        <li><input type="radio" name="Legacy" value="True"></li><li>Legacy Status (T/F)</li><li><input type="radio" name="Legacy" value="False"></li><br>
+                        <li><input type="radio" name="Athlete" value="True"></li><li>Athlete Status (T/F)</li><li><input type="radio" name="Athlete" value="False"></li><br>
+                    </ul>
+                    <br>
+                    <ul>
+                        <li><input type="radio" name="HS_Type" value="Public">Public</li>
+                        <li><input type="radio" name="HS_Type" value="Private">Private</li><br>
+                        <li><input type="radio" name="HS_Type" value="Parochial">Parochial</li>
+                        <li><input type="radio" name="HS_Type" value="Home">Home</li>
+                    </ul>
+                    <br>
+                </div>
                 <input type="submit" value="Predict your destiny...">
 
             </form>
